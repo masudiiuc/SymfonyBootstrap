@@ -1,0 +1,7 @@
+project_name_admin_homepage:
+    pattern:  /admin
+    defaults: { _controller: ProjectBundleAdminBundle:Default:index }
+
+admin_auth_login:
+    pattern: /admin/login
+    defaults: { _controller: ProjectBundleAdminBundle:Auth:login}
