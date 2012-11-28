@@ -31,13 +31,6 @@ The remittance portal for sending money to Bangladesh. Please follow the below s
 6. Run the following commands:
 
     php app/console doctrine:database:create
-    php app/console doctrine:database:create --connection=prod
-    php app/console doctrine:database:create --connection=sandbox
-
-    php app/console doctrine:schema:update --force
-    php app/console doctrine:schema:update --force --em=prod
-    php app/console doctrine:schema:update --force --em=sandbox
-
     chmod -R 0777 app/cache
 
 6. Enjoy!
