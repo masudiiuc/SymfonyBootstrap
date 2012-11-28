@@ -1,5 +1,5 @@
-SimplySend BD
-=============
+Symfony 2.0 Project Bootstrapping
+=================================
 
 The remittance portal for sending money to Bangladesh. Please follow the below steps to install it on your machine:
 
