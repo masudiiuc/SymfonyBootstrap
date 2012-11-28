@@ -1,6 +1,6 @@
 <?php
 
-namespace SimplySend\Bundle\AdminBundle\Tests\Controller;
+namespace ProjectBundle\Bundle\AdminBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

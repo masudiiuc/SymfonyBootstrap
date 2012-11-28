@@ -1,6 +1,6 @@
 <?php
 
-namespace SimplySend\Bundle\AdminBundle\Grid;
+namespace ProjectBundle\Bundle\AdminBundle\Grid;
 
 use Kitpages\DataGridBundle\Model\GridConfig;
 use Kitpages\DataGridBundle\Model\Field;

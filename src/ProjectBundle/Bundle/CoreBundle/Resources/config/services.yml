@@ -17,7 +17,7 @@ services:
     tags:
       -   { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
 
-  acme.twig.simplysend_extension:
+  acme.twig.ProjectBundle_extension:
           class: ProjectBundle\Bundle\CoreBundle\Twig\ProjectBundleExtension
           tags:
               - { name: twig.extension }

@@ -1,8 +1,8 @@
 <?php
 
-namespace SimplySend\Bundle\CoreBundle\Tests\Service;
+namespace ProjectBundle\Bundle\CoreBundle\Tests\Service;
 
-use SimplySend\Bundle\CoreBundle\Service\PayzaService;
+use ProjectBundle\Bundle\CoreBundle\Service\PayzaService;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\DependencyInjection\Container;
 
@@ -21,7 +21,7 @@ class PayzaServiceTest extends \PHPUnit_Framework_Testcase
 
         $container = new Container(new ParameterBag(array(
             'payza_sandbox_host' => 'https://sandbox.payza.com/api/api.svc',
-            'payza_sandbox_username' => 'test@simplysendbd.com',
+            'payza_sandbox_username' => 'test@ProjectBundlebd.com',
             'payza_sandbox_password' => '123456',
             'payza_sandbox_apikey' => 'ABCD-EFGH-IJKL-MNOP-QRST-UVWX-YZ',
             'payza_sandbox_purch_type' => '0',

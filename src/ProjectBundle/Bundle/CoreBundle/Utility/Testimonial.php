@@ -1,6 +1,6 @@
 <?php
 
-namespace SimplySend\Bundle\CoreBundle\Utility;
+namespace ProjectBundle\Bundle\CoreBundle\Utility;
 
 class Testimonial
 {

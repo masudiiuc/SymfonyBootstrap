@@ -1,6 +1,6 @@
 <?php
 
-namespace SimplySend\Bundle\CoreBundle\Utility\Http;
+namespace ProjectBundle\Bundle\CoreBundle\Utility\Http;
 
 use Guzzle\Http\Client;
 
