@@ -12,9 +12,9 @@ The remittance portal for sending money to Bangladesh. Please follow the below s
     php composer.phar --verbose install
 
 3. Setup a VirtualHost with the following configuration (modify as needed):
- <VirtualHost *:80>
+<VirtualHost *:80>
 
- ServerName project.simfony.local
+ ServerName project.symfony.local
  DocumentRoot "/Users/masud/Sites/personal/SymfonyBootstrap/web"
 
  <Directory "/Users/masud/Sites/personal/SymfonyBootstrap/web">
