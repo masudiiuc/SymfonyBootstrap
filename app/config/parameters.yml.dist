@@ -25,17 +25,17 @@ parameters:
   sandbox_database_password: ~
 
   mailer_transport:  smtp
-  mailer_host:       smtp.sendgrid.net
-  mailer_user:       loosemonkies
-  mailer_password:   Lm@09876
-  mailer_port:       587
+  mailer_host:
+  mailer_user:
+  mailer_password:
+  mailer_port:
 
-  sms_host:          121.241.242.114
-  sms_port:          8080
-  sms_username:      hpg-payza
-  sms_password:      Pay7167
-  sms_message_type:  0
-  sms_del_report:    1
+  sms_host:
+  sms_port:
+  sms_username:
+  sms_password:
+  sms_message_type:
+  sms_del_report:    
 
 
   http_client:       HttpRequest
