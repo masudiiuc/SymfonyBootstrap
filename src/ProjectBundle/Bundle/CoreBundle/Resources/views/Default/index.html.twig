@@ -1,7 +1,160 @@
-{% extends 'ProjectBundleCoreBundle::layout.html.twig' %}
+{% extends 'ProjectBundleCoreBundle::layout_public.html.twig' %}
 
 {% block content %}
-    Test Homepage
+    <style>
+        .marker-image {
+            width:100px;
+            height:100px;
+            border:1px solid #000;
+            margin-left:-51px;
+            margin-top:-51px;
+            pointer-events:all;
+            position:absolute;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.dropdown-toggle').dropdown();
+
+            $('.dropdown input, .dropdown label').click(function(e) {
+                e.stopPropagation();
+            });
+
+            $('.lianchor').click(function(){
+                var anchorId = this.id;
+                var temp = anchorId.split('-');
+
+                var dropdownType = temp[0];
+                var dropdownId = temp[1];
+
+                switch (dropdownType) {
+                    case 'a' :  $('#zila'+dropdownId).attr('style', 'display: inline-block;');
+                                break;
+                    case 'd' :  $('#upazila'+dropdownId).attr('style', 'display: inline-block;');
+                                break;
+                }
+            });
+
+        });
+
+    </script>
+    <div style="width: 100%;">
+        <a class="brand-logo" href="javascript:void(0);"></a>
+    </div>
+
+    <div class="ngoSearch" id="primary" style="margin-left: 201px;">
+        <ul class="nav">
+            <li class="dropdown">
+                <a class="dropdown-toggle" href="javascript:void(0);" data-toggle="dropdown">স্থানের নাম দিয়ে খুঁজুন<strong class="caret"></strong></a>
+                <div class="dropdown-menu" style="float: left; min-width: 100px !important; padding-bottom: 5px !important;">
+                    <p style="text-align: left; margin-left: 5px;"><b>বিভাগ নির্বাচন</b></p>
+                    <ul>
+                        <li style="clear: both;"><a class="lianchor" id="a-0" href="javascript:void(0);" >ঢাকা</a></li>
+                        <li style="clear: both;"><a class="lianchor" id="a-1" href="javascript:void(0);" >চট্টগ্রাম</a></li>
+                        <li style="clear: both;"><a class="lianchor" id="a-2" href="javascript:void(0);" >খুলনা</a></li>
+                        <li style="clear: both;"><a class="lianchor" id="a-3" href="javascript:void(0);" >বরিশাল</a></li>
+                        <li style="clear: both;"><a class="lianchor" id="a-4" href="javascript:void(0);" >রাজশাহী</a></li>
+                        <li style="clear: both;"><a class="lianchor" id="a-5" href="javascript:void(0);" >রংপুর</a></li>
+                        <li style="clear: both;"><a class="lianchor" id="a-6" href="javascript:void(0);" >সিলেট</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="dropdown" id="zila0" style="padding-top: 54px; display: none;">
+                <div class="dropdown-menu" style="float: left; position: fixed; min-width: 100px !important; padding-bottom: 5px !important;">
+                    <p style="text-align: left; margin-left: 5px;">জেলা</p>
+                    <ul>
+                        <li style="clear: both;"><a class="lianchor" id="d-0" href="javascript:void(0);">ঢাকা</a></li>
+                        <li style="clear: both;"><a class="lianchor" id="d-1" href="javascript:void(0);">গাজীপুর</a></li>
+                        <li style="clear: both;"><a class="lianchor" id="d-2" href="javascript:void(0);">ময়মনসিংহ</a></li>
+                        <li style="clear: both;"><a class="lianchor" id="d-3" href="javascript:void(0);">জামালপুর</a></li>
+                        <li style="clear: both;"><a class="lianchor" id="d-4" href="javascript:void(0);">শেরপুর</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="dropdown" id="upazila2" style="padding-top: 54px; display: none;">
+                <div class="dropdown-menu" style="float: left; position: fixed; min-width: 100px !important; padding-bottom: 5px !important;">
+                    <p style="text-align: left; margin-left: 5px;">উপজেলা</p>
+                    <ul>
+                        <li style="clear: both;"><a class="lianchor" href="javascript:void(0);">ময়মনসিংহ সদর</a></li>
+                        <li style="clear: both;"><a class="lianchor" href="javascript:void(0);">ফুলপুর</a></li>
+                        <li style="clear: both;"><a class="lianchor" href="javascript:void(0);">নান্দাইল</a></li>
+                        <li style="clear: both;"><a class="lianchor" href="javascript:void(0);">গৌরীপুর</a></li>
+                        <li style="clear: both;"><a class="lianchor" href="javascript:void(0);">হালুয়াঘাট</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="ngoSearch" id="advanced" style="display: none;">
+        <input type="text" name="searchKeyWords" id="searchKeyWords" placeholder="এনজিও নাম, স্থানের নাম অথবা কার্যক্রম লিখে খুঁজুন" size="250" style="width: 700px;"/>
+        <input type="button" class="btn btn-primary" name="search" value="খুঁজুন" style="margin-bottom: 10px;">
+    </div>
+
+    <div id="map">
+
+    </div>
+
 {% endblock %}
 
-{% block closure %} {% endblock %}
+{% block closure %}
+    <script type="text/javascript">
+        // GeoJSON input features
+        // The image and url properties of the features will be used in
+        // the tooltips
+        var features = [{
+            "geometry": { "type": "Point", "coordinates": [-77.03, 38.90]},
+            "properties": {
+                "image": "http://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/DCmontage4.jpg/250px-DCmontage4.jpg",
+                "url": "http://en.wikipedia.org/wiki/Washington,_D.C.",
+                "city": "Asha NGO"
+            }
+        }, {
+            "geometry": { "type": "Point", "coordinates": [-87.63, 41.88]},
+            "properties": {
+                "image": "http://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Chicago_montage.jpg/300px-Chicago_montage.jpg",
+                "url": "http://en.wikipedia.org/wiki/Chicago",
+                "city": "Sheree"
+            }
+        }, {
+            "geometry": { "type": "Point", "coordinates": [-74.00, 40.71]},
+            "properties": {
+                "image": "http://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/NYC_Montage_2011.jpg/275px-NYC_Montage_2011.jpg",
+                "url": "http://en.wikipedia.org/wiki/New_York_City",
+                "city": "Brac"
+            }
+        }];
+
+        // Create map
+        var map = mapbox.map('map');
+        map.addLayer(mapbox.layer().id('rajuniit.map-8nfypq3k'));
+
+        // Create and add marker layer
+        var markerLayer = mapbox.markers.layer().features(features);
+        var interaction = mapbox.markers.interaction(markerLayer);
+        map.addLayer(markerLayer);
+
+        // Set a custom formatter for tooltips
+        // Provide a function that returns html to be used in tooltip
+        interaction.formatter(function(feature) {
+            var o = '<a target="_blank" href="' + feature.properties.url + '">' +
+                    '<img src="' + feature.properties.image + '">' +
+                    '<h2>' + feature.properties.city + '</h2>' +
+                    '</a>';
+
+            return o;
+        });
+
+        // Set iniital center and zoom
+        map.centerzoom({
+            lat: 45.908,
+            lon: -78.525
+        }, 5);
+
+        // Attribute map
+        map.ui.attribution.add()
+                .content('<a href="http://mapbox.com/about/maps">Terms &amp; Feedback</a>');
+    </script>
+
+{% endblock %}

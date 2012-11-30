@@ -778,3 +778,27 @@ td.blue-line {
     text-decoration: none;
     text-shadow: 1px 1px 0 #ebebeb;
 }
+
+.brand-logo {
+    background: url(../img/ngoscope.png) no-repeat;
+    display: inline-block;
+    color: #ffffff;
+    height: 53px;
+    width: 200px;
+    font-size: 20px;
+    font-weight: 200;
+
+}
+
+.ngoSearch {
+    clear: both;
+    margin: 0px auto;
+    /*margin-top: 70px;*/
+    text-align: center;
+}
+
+.lianchor {
+    padding: 2px !important;
+    min-width: 100px;
+    margin-left: -27px;
+}
