@@ -5,31 +5,30 @@
     &nbsp;
 </div>
 
-{% if (error) %}
-    <div class="flash-error">{{ error }}</div>
-{% endif %}
+<div class="span12">
+    <div class="row well span8" style="margin-left: 150px;">
+        <legend>Administrative Login</legend>
+        <form class="form-horizontal" method="POST">
+            <div class="control-group">
+                <label class="control-label" for="inputEmail">User Name</label>
+                <div class="controls">
+                    <input type="text" id="inputEmail" name="username" id="username" placeholder="User Name" required="required">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputPassword">Password</label>
+                <div class="controls">
+                    <input type="password" name="password" id="inputPassword" placeholder="Password" required="required">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
 
-<div class="row well span8" style="margin-left: 300px;">
-    <legend>Administrative Login</legend>
-    <form class="form-horizontal" method="POST">
-        <div class="control-group">
-            <label class="control-label" for="inputEmail">User Name</label>
-            <div class="controls">
-                <input type="text" id="inputEmail" name="username" id="username" placeholder="User Name" required="required">
+                    <button type="submit" class="btn">Sign in</button>
+                </div>
             </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="inputPassword">Password</label>
-            <div class="controls">
-                <input type="password" name="password" id="inputPassword" placeholder="Password" required="required">
-            </div>
-        </div>
-        <div class="control-group">
-            <div class="controls">
-
-                <button type="submit" class="btn">Sign in</button>
-            </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
+
 {% endblock %}

@@ -6,6 +6,6 @@ class DefaultController extends BaseController
 {
     public function indexAction()
     {
-        die('default Controller');
+        return $this->render('ProjectBundleAdminBundle:Default:index.html.twig');
     }
 }

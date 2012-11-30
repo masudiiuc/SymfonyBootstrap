@@ -1,5 +1,100 @@
 {% extends 'ProjectBundleAdminBundle::layout.html.twig' %}
 
 {% block content %}
-    <h2>Admin Homepage</h2>
+    <div class="span12">
+
+        <h2>NGO Dashboard</h2>
+
+        <div class="span3" style="margin-left: 0px; width: 240px;">
+            <div class="well">
+                <h3 class="muted">Project List</h3>
+                <p><span class="label">add New</span></p>
+                <div class="row">
+
+                    <div class="span6">
+                        <div class="tabbable tabs-left">
+
+                            <ul class="nav nav-tabs" style="padding-top:15px;margin-left:-20px; width: 239px;">
+                                <li class="active"><a href="#A" data-toggle="tab">Bangladesh Sanitation</a></li>
+                                <li><a href="#B" data-toggle="tab">Dhaka Sanitation</a></li>
+                                <li><a href="#C" data-toggle="tab">Comilla Sanitation</a></li>
+
+                            </ul>
+
+
+                        </div> <!-- /tabbable -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="span5" style="width: 430px;">
+            <div class="well">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="A">
+                        <h4 class="text-warning">Bangladesh Sanitation</h4>
+
+                        <p>'You ought to be ashamed of yourself for asking such a simple question,' added the Gryphon; and then they both sat silent and looked at poor Alice, who felt ready to sink into the earth. At last the Gryphon said to the Mock Turtle, 'Drive on, old fellow! Don't be all day about it!' and he went on in these words:
+                            'Yes, we went to school in the sea, though you mayn't believe it—'
+                            'I never said I didn't!' interrupted Alice.
+                            'You did,' said the Mock Turtle.</p>
+                        <div>
+                            <span class="badge badge-success">Posted 2012-08-02 20:47:04</span><div class="pull-right"><span class="label">alice</span> <span class="label">story</span> <span class="label">blog</span> <span class="label">personal</span></div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="tab-pane" id="B">
+                        <h4 class="text-warning">Dhaka Sanitation</h4>
+                        <p><span class="label label-success" ><i class="icon-signal" style="margin-right:3px;"></i>WIRELESS</span> <span class="label label-info" >50m</span> <span class="label" >DOGS</span><span class="badge badge-success pull-right" style="padding:5px;margin-right:5px;">70€ - 150€</span></p>
+                        <img src="http://placehold.it/80x80" alt="" style="margin-right:5px;"><img src="http://placehold.it/80x80" alt="" style="margin-right:5px;"><img src="http://placehold.it/80x80" alt="" style="margin-right:5px;"><img src="http://placehold.it/80x80" alt="" style="margin-right:5px;"><img src="http://placehold.it/80x80" alt="">
+                    </div>
+                    <div class="tab-pane" id="C">
+                        <h4 class="text-warning">Comilla Sanitation</h4>
+                        <p><span class="label label-success" ><i class="icon-signal" style="margin-right:3px;"></i>WIRELESS</span> <span class="label label-info" >400m</span> <span class="label" >DOGS</span><span class="badge badge-success pull-right" style="padding:5px;margin-right:5px;">20€ - 80€</span></p>
+                        <img src="http://placehold.it/80x80" alt="" style="margin-right:5px;"><img src="http://placehold.it/80x80" alt="" style="margin-right:5px;"><img src="http://placehold.it/80x80" alt="" style="margin-right:5px;"><img src="http://placehold.it/80x80" alt="" style="margin-right:5px;"><img src="http://placehold.it/80x80" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="span3">
+            <div class="well" style="padding: 10px;">
+                <h3 class="text-info">Project Activity</h3>
+                <div style=" border-bottom: 1px dotted #ff8c00; margin-bottom: 5px;">
+                    <span class="label pull-left label-important" style="margin-right: 5px;">SMS</span>
+                    <span class="label pull-left label-important">18-11-2012 10:12 AM</span>&nbsp;
+                    <p class="">Message body goes here</p>
+                </div>
+
+                <div style=" border-bottom: 1px dotted #ff8c00; margin-bottom: 5px;">
+                    <span class="label pull-left label-info" style="margin-right: 5px;">twitter</span>&nbsp;
+                    <span class="label pull-left label-info" style="margin-right: 5px;">18-11-2012 09:12 AM</span>&nbsp;
+                    <p>lorem ipsum test writting as activity update</p>
+                </div>
+
+                <div style=" border-bottom: 1px dotted #ff8c00; margin-bottom: 5px;">
+                    <span class="label pull-left label-important">SMS</span>&nbsp;
+                    <span class="label pull-left label-important" style="margin-right: 5px;">18-11-2012 10:12 AM</span>&nbsp;
+                    <p class="">lorem ipsum test writting as activity update for bangladesh.</p>
+                </div>
+
+                <div style=" border-bottom: 1px dotted #ff8c00; margin-bottom: 5px;">
+                    <span class="label pull-left label-info">twitter</span>&nbsp;
+                    <p>Message body goes here</p>
+                </div>
+
+                <div style=" border-bottom: 1px dotted #ff8c00; margin-bottom: 5px;">
+                    <span class="label pull-left label-important" style="margin-right: 5px;">SMS</span>&nbsp;
+                    <span class="label pull-left label-important">18-11-2012 10:12 AM</span>&nbsp;
+                    <p class="">Message body goes here</p>
+                </div>
+
+                <div style=" border-bottom: 1px dotted #ff8c00; margin-bottom: 5px;">
+                    <span class="label pull-left label-info">twitter</span>&nbsp;
+                    <p>Message body goes here</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
 {% endblock %}

@@ -5,10 +5,10 @@ namespace ProjectBundle\Bundle\CoreBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="ProjectBundle\Bundle\CoreBundle\Entity\UserRepository")
- * @ORM\Table(name="users")
+ * @ORM\Entity(repositoryClass="ProjectBundle\Bundle\CoreBundle\Entity\MemberRepository")
+ * @ORM\Table(name="members")
  */
-class User
+class Member
 {
     /**
      * @ORM\Id
@@ -30,17 +30,15 @@ class User
     protected $password;
 
     /** @ORM\Column(type="string", length=100) */
-    protected $roles;
-
-    /** @ORM\Column(type="string", length=100) */
     protected $status;
 
-    /** @ORM\OneToMany(targetEntity="Project", mappedBy="User") */
+    /** @ORM\ManyToOne(targetEntity="User") */
+    protected $user;
+
+    /** @ORM\ManyToMany(targetEntity="Project", mappedBy="members") */
     protected $projects;
 
-    /** @ORM\OneToMany(targetEntity="Member", mappedBy="User") */
-    protected $members;
+    /** @ORM\OneToMany(targetEntity="Activity", mappedBy="Member") */
+    protected $activities;
 
-    /** @ORM\Column(type="datetime") */
-    protected $lastLogin;
 }

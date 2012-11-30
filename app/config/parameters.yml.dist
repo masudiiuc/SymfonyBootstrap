@@ -35,7 +35,7 @@ parameters:
   sms_username:
   sms_password:
   sms_message_type:
-  sms_del_report:    
+  sms_del_report:
 
 
   http_client:       HttpRequest
