@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Project name</title>
+    <title>এনজিওস্কোপ</title>
 
     {% stylesheets
         '../app/Resources/css/styles.css'
@@ -11,33 +11,75 @@
     {% endstylesheets %}
 
     <!--[if gte IE 8]>
-    <style type="text/css">input { vertical-align: middle; }</style>
+        <style type="text/css">input { vertical-align: middle; }</style>
     <![endif]-->
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <style type="text/css">
+        .brand-logo {
+            background: url(../images/ngoscope.png) no-repeat;
+            height: 30px;
+            width: 200px;
+            margin-left: -180px;
+        }
+
+        .ngoSearch {
+            clear: both;
+            margin: 0px auto;
+            margin-top: 70px;
+            text-align: center;
+        }
+    </style>
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,300,300italic,700italic,800' rel='stylesheet' type='text/css'>
-
 </head>
-
 <body>
-
-
     {% block content %}{% endblock %}
-
 
     {% javascripts
         '../app/Resources/js/jquery-1.8.2.min.js'
         '../app/Resources/js/jquery.validate.min.js'
         '../app/Resources/js/jquery.placeholder.js'
+        '../app/Resources/js/html5.js'
+        '../app/Resources/js/bootstrap.min.js'
     %}
+
     <script type="text/javascript" src="{{ asset_url }}"></script>
+
     {% endjavascripts %}
 
     {% block closure %}{% endblock %}
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand brand-logo" href="javascript:void(0);"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="ngoSearch" id="primary">
+        <ul class="nav">
+            <li class="dropdown">
+                <a class="dropdown-toggle" href="javascript:void(0);" data-toggle="dropdown">Search By Location<strong class="caret"></strong></a>
+                <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+                    <ul>
+                        <li>Dhaka</li>
+                        <li>Chittagong</li>
+                        <li>Khulna</li>
+                        <li>Barisal</li>
+                        <li>Rajshahi</li>
+                        <li>Rangpur</li>
+                        <li>Sylhet</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="ngoSearch" id="advanced">
+        <input type="text" name="searchKeyWords" id="searchKeyWords" placeholder="Search by NGO name, Location or Activities" size="250" style="width: 700px;"/>
+        <input type="button" class="btn btn-primary" name="search" value="Search" style="margin-bottom: 10px;">
+    </div>
 
 </body>
 </html>
