@@ -8,4 +8,9 @@ class AuthController extends BaseController
     {
         return $this->render('ProjectBundleAdminBundle:Auth:login.html.twig');
     }
+
+    public function signupAction()
+    {
+        return $this->render('ProjectBundleAdminBundle:Auth:register.html.twig');
+    }
 }
