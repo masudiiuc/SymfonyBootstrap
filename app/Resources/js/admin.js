@@ -19,6 +19,16 @@ var Admin = {
         $("#project-list li a").bind('click', function(e){
             $("#middle-container").html( _.template(Templates.ProjectDetails, {}) );
         });
+
+        $("#create-member").bind('click', function(e){
+            self.removeProjectListSection();
+            $("#middle-container").html( _.template(Templates.AddMember, {}) );
+        });
+
+        $("#view-member-list").bind('click', function(e){
+            self.removeProjectListSection();
+            $("#middle-container").html( _.template(Templates.ViewMemberList, {}) );
+        });
     },
 
     removeProjectListSection:function(){
