@@ -5,3 +5,7 @@ project_name_admin_homepage:
 admin_auth_login:
     pattern: /ngo/login
     defaults: { _controller: ProjectBundleAdminBundle:Auth:login}
+
+admin_auth_signup:
+    pattern: /ngo/signup
+    defaults: { _controller: ProjectBundleAdminBundle:Auth:signup}
