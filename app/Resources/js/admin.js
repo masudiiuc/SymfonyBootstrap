@@ -18,6 +18,7 @@ var Admin = {
 
         $("#project-list li a").bind('click', function(e){
             $("#middle-container").html( _.template(Templates.ProjectDetails, {}) );
+            self.init();
         });
 
         $("#create-member").bind('click', function(e){
@@ -29,6 +30,33 @@ var Admin = {
             self.removeProjectListSection();
             $("#middle-container").html( _.template(Templates.ViewMemberList, {}) );
         });
+
+        $("#assignMember").bind('click', function(e){
+            $("#assign-member-form").show();
+        });
+
+        $("#cancel-assign-member").bind('click', function(e){
+            $(e.target).parent().hide();
+        });
+
+        $("#assign-member").bind('click', function(e){
+            var memberName = $("#assign-member-form").find('input[name="member_name"]').val();
+            $("#member-list").append('<span style="text-align:center"><img src="http://placehold.it/80x80" alt="" style="margin:5px;"><br/>'+ memberName +'<a href="" class="delete-member">Delete</a></span>');
+            $("#assign-member-form").hide().find('input[name="member_name"]').val('');
+        });
+
+        $(".show-proposal-details").bind('click', function(){
+            self.removeProjectListSection();
+            console.log('show details');
+            $("#middle-container").html( _.template(Templates.EOIDetails, {}) );
+        });
+
+        $("#view-eoi-list").bind('click', function(){
+            self.removeProjectListSection();
+            $("#middle-container").html( _.template(Templates.ExpressionOfInterest, {}) );
+            self.init();
+        });
+
     },
 
     removeProjectListSection:function(){
