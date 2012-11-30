@@ -7,6 +7,7 @@
     {% stylesheets
         '../app/Resources/css/styles.css'
         '../app/Resources/css/bootstrap.min.css'
+        '../app/Resources/css/mapbox.css'
     %}
     <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
@@ -16,6 +17,7 @@
     '../app/Resources/js/jquery.validate.min.js'
     '../app/Resources/js/jquery.placeholder.js'
     '../app/Resources/js/bootstrap.min.js'
+    '../app/Resources/js/mapbox.js'
     %}
 
     <script type="text/javascript" src="{{ asset_url }}"></script>
@@ -25,7 +27,9 @@
     <!--[if gte IE 8]>
         <style type="text/css">input { vertical-align: middle; }</style}</style>
     <![endif]-->
-
+    <style>
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,300,300italic,700italic,800' rel='stylesheet' type='text/css'>
 </head>
 <body>
