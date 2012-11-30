@@ -11,6 +11,30 @@
             pointer-events:all;
             position:absolute;
         }
+        #map {
+            clear: both;
+            float: left;
+            top: 200px;
+            width: 800px;
+            height: 800px;
+            left: 200px;
+            right: 200px;
+            padding: 0px;
+            overflow: hidden !important;
+            position: absolute;
+        }
+
+        #feed {
+            float: right;
+            margin-right: 77px;
+            margin-top: 47px;
+        }
+
+        .activity {
+            padding: 5px;
+            border-bottom: 1px dotted #a9a9a9;
+        }
+
     </style>
     <script type="text/javascript">
         $(document).ready(function() {
@@ -157,7 +181,41 @@
     </div>
 
     <div id="map">
+        <h4 class="label label-success" style="width: auto;margin-left: -5px; padding: 5px 5px 5px 15px;"><b>এক নজরে সারা দেশ</b></h4>
+        <span id="wholeBd">
+            <iframe width='800' height='600' frameBorder='0' src='http://a.tiles.mapbox.com/v3/loosemonkies.map-raehzk2w.html#7/24.076559120295382/90.5377103058755'></iframe>
+        </span>
 
+        <span id="dhakaDiv" style="display: none;">
+
+        </span>
+
+        <span id="mymenDist" style="display: none;">
+
+        </span
+
+        <span id="mymSadarUp" style="display: none;">
+
+        </span>
+
+        <span id="aquaUnion" style="display: none;">
+
+        </span>
+    </div>
+
+    <div id="feed">
+        <h4 class="label label-success" style="width: 250px;margin-left: -5px;padding: 5px;"><b>সম্মিলিত কার্যক্রম</b></h4>
+        <div class="well">
+            <p class="activity"><a style="text-decoration: none;" href="javascript:void(0);">feed 1</a></p>
+            <p class="activity"><a style="text-decoration: none;" href="javascript:void(0);">feed 2</a></p>
+            <p class="activity"><a style="text-decoration: none;" href="javascript:void(0);">feed 3</a></p>
+            <p class="activity"><a style="text-decoration: none;" href="javascript:void(0);">feed 4</a></p>
+            <p class="activity"><a style="text-decoration: none;" href="javascript:void(0);">feed 5</a></p>
+            <p class="activity"><a style="text-decoration: none;" href="javascript:void(0);">feed 6</a></p>
+            <p class="activity"><a style="text-decoration: none;" href="javascript:void(0);">feed 7</a></p>
+            <p class="activity"><a style="text-decoration: none;" href="javascript:void(0);">feed 8</a></p>
+            <p class="activity"><a style="text-decoration: none;" href="javascript:void(0);">feed 9</a></p>
+        </div>
     </div>
 
 {% endblock %}
@@ -167,7 +225,7 @@
         // GeoJSON input features
         // The image and url properties of the features will be used in
         // the tooltips
-        var features = [{
+        /*var features = [{
             "geometry": { "type": "Point", "coordinates": [-77.03, 38.90]},
             "properties": {
                 "image": "http://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/DCmontage4.jpg/250px-DCmontage4.jpg",
@@ -218,7 +276,7 @@
 
         // Attribute map
         map.ui.attribution.add()
-                .content('<a href="http://mapbox.com/about/maps">Terms &amp; Feedback</a>');
+                .content('<a href="http://mapbox.com/about/maps">Terms &amp; Feedback</a>');*/
     </script>
 
 {% endblock %}

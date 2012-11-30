@@ -5,23 +5,24 @@ namespace ProjectBundle\Bundle\CoreBundle\Controller;
 
 class SearchController extends BaseController
 {
-    public function search()
+    public function searchAction()
     {
         print_r($_REQUEST);die;
     }
 
-    public function getLocation($location, $key)
+    public function getLocationAction($location, $key)
     {
+        $response = '';
         switch ($location) {
-            case 'district': return $this->getDistricts($key);
+            case 'district': $response = $this->getDistricts($key);
                              break;
-            case 'upazila':  return $this->getUpazillas($key);
+            case 'upazila':  $response = $this->getUpazillas($key);
                              break;
-            case 'union':    return $this->getUnions($key);
+            case 'union':    $response = $this->getUnions($key);
                              break;
         }
 
-        return null;
+        return json_encode($response);
     }
 
     public function getDistricts($key)
