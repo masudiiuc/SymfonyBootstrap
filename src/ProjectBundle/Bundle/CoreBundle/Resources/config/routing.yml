@@ -9,3 +9,7 @@ project_core_login:
 project_core_logout:
     pattern:  /logout
     defaults: { _controller: ProjectBundleCoreBundle:Auth:logout }
+
+project_home_get_location:
+    pattern:  /search/{location}/{key}
+    defaults: { _controller: ProjectBundleCoreBundle:Search:getLocation }
