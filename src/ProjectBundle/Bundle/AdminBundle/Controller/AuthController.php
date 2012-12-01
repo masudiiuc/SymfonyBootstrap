@@ -13,4 +13,14 @@ class AuthController extends BaseController
     {
         return $this->render('ProjectBundleAdminBundle:Auth:register.html.twig');
     }
+
+    public function localGovAction()
+    {
+        return $this->render('ProjectBundleAdminBundle:Auth:local_gov_login.html.twig');
+    }
+
+    public function localGovDashboardAction()
+    {
+        return $this->render('ProjectBundleAdminBundle:Auth:dashboard.html.twig');
+    }
 }
