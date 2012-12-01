@@ -1,7 +1,7 @@
 <?php
 
 namespace ProjectBundle\Bundle\CoreBundle\Controller;
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class SearchController extends BaseController
 {
@@ -10,50 +10,60 @@ class SearchController extends BaseController
         print_r($_REQUEST);die;
     }
 
+    /**
+     * @Template("ProjectBundle:CoreBundle:Default:index")
+     */
     public function getLocationAction($location, $key)
     {
-        $response = '';
+        $template = '';
         switch ($location) {
             case 'district': $response = $this->getDistricts($key);
+                             $template = $this->render('ProjectBundleCoreBundle:Search:district.html.twig', $response);
                              break;
             case 'upazila':  $response = $this->getUpazillas($key);
+                             $template = $this->render('ProjectBundleCoreBundle:Search:upazila.html.twig', $response);
                              break;
             case 'union':    $response = $this->getUnions($key);
+                             $template = $this->render('ProjectBundleCoreBundle:Search:union.html.twig', $response);
                              break;
         }
 
-        return json_encode($response);
+        return $template;
     }
 
     public function getDistricts($key)
     {
-        $response = '
-        <li style="clear: both;"><a class="lianchor" id="d-0" href="javascript:void(0);">ঢাকা</a></li>
-        <li style="clear: both;"><a class="lianchor" id="d-1" href="javascript:void(0);">গাজীপুর</a></li>
-        <li style="clear: both;"><a class="lianchor" id="d-2" href="javascript:void(0);">ময়মনসিংহ</a></li>
-        <li style="clear: both;"><a class="lianchor" id="d-3" href="javascript:void(0);">জামালপুর</a></li>
-        <li style="clear: both;"><a class="lianchor" id="d-4" href="javascript:void(0);">শেরপুর</a></li>';
+        $response = array(
+            '0' => 'ঢাকা',
+            '1' => 'গাজীপুর',
+            '2' => 'ময়মনসিংহ',
+            '3' => 'জামালপুর',
+            '4' => 'শেরপুর'
+        );
 
-        return $response;
+        return array('districts' => $response);
     }
 
     public function getUpazillas($key)
     {
-        $response = '
-        <li style="clear: both;"><a class="lianchor" id="u-o" href="javascript:void(0);">ময়মনসিংহ সদর</a></li>
-        <li style="clear: both;"><a class="lianchor" id="u-1" href="javascript:void(0);">ফুলপুর</a></li>
-        <li style="clear: both;"><a class="lianchor" id="u-2" href="javascript:void(0);">নান্দাইল</a></li>
-        <li style="clear: both;"><a class="lianchor" id="u-3" href="javascript:void(0);">গৌরীপুর</a></li>
-        <li style="clear: both;"><a class="lianchor" id="u-4" href="javascript:void(0);">হালুয়াঘাট</a></li>';
-        return $response;
+        $response = array(
+            '0' => 'ময়মনসিংহ সদর',
+            '1' => 'ফুলপুর',
+            '2' => 'নান্দাইল',
+            '3' => 'গৌরীপুর',
+            '4' => 'হালুয়াঘাট'
+        );
+
+        return array('upazilas' => $response);
     }
 
     public function getUnions($key)
     {
-        $response = '
-        <li style="clear: both;"><a class="lianchor" id="un-0" href="javascript:void(0);">আকুয়া</a></li>
-        <li style="clear: both;"><a class="lianchor" id="un-1" href="javascript:void(0);">বাড়েরা</a></li>';
+        $response = array(
+            '0' => 'আকুয়া',
+            '1' => 'বাড়েরা'
+        );
 
-        return $response;
+        return array('unions' => $response);
     }
 }

@@ -44,7 +44,7 @@
                 e.stopPropagation();
             });
 
-            $('.lianchor').click(function(){
+            $('.lianchor').live('click', function(){
                 var anchorId = this.id;
                 var temp = anchorId.split('-');
 
@@ -58,12 +58,12 @@
                                     url: route,
                                     type: "GET",
                                     success: function(data) {
-                                        response = data;
-                                        console.log(data);
+                                        $('#dist').append(data);
+                                        alert($('#dist').html());
                                     }
                                 });
-                                $('#zila'+dropdownId).attr('style', 'display: list-item; margin-top: 54px; margin-left: 138px; position: absolute; z-index: 1000; float: left;min-width: 100px; list-style: none; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, 0.2); *border-right-width: 2px; *border-bottom-width: 2px; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box;');
-                                $('#dist').val(response);
+                                $('#zila'+dropdownId).attr('style', 'display: list-item;  z-index: 900; margin-top: 54px; margin-left: 138px; position: absolute; z-index: 1000; float: left;min-width: 100px; list-style: none; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, 0.2); *border-right-width: 2px; *border-bottom-width: 2px; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box;');
+
                                 $(".upazila").each(function(){
                                     $(this).hide();
                                 });
@@ -72,18 +72,19 @@
                                     $(this).hide();
                                 });
                                 break;
+
                     case 'd' :  var route = '/search/upazila/'+dropdownId;
                                 var response = '';
                                 $.ajax({
                                     url: route,
                                     type: "GET",
                                     success: function(data) {
-                                        response = data;
-                                        console.log(data);
+                                        alert(data);
+                                        $('#upaz').append(data);
                                     }
                                 });
-                                $('#upaz').val(response);
-                                $('#upazila'+dropdownId).attr('style', 'display: list-item; margin-top: 54px; margin-left: 260px; position: absolute; z-index: 1000; float: left;min-width: 100px; list-style: none; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, 0.2); *border-right-width: 2px; *border-bottom-width: 2px; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box;');
+
+                                $('#upazila'+dropdownId).attr('style', 'display: list-item;  z-index: 900; margin-top: 54px; margin-left: 260px; position: absolute; z-index: 1000; float: left;min-width: 100px; list-style: none; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, 0.2); *border-right-width: 2px; *border-bottom-width: 2px; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box;');
                                 $(".zila").each(function(){
                                     $(this).hide();
                                 });
@@ -92,18 +93,19 @@
                                     $(this).hide();
                                 });
                                 break;
+
                     case 'u' :  var route = '/search/union/'+dropdownId;
                                 var response = '';
                                 $.ajax({
                                     url: route,
                                     type: "GET",
                                     success: function(data) {
-                                        response = data;
-                                        console.log(data);
+                                        alert(data);
+                                        $('#union').append(data);
                                     }
                                 });
-                                $('#union').val(response);
-                                $('#union'+dropdownId).attr('style', 'display: list-item; margin-top: 54px; margin-left: 382px; position: absolute; z-index: 1000; float: left;min-width: 100px; list-style: none; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, 0.2); *border-right-width: 2px; *border-bottom-width: 2px; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box;');
+
+                                $('#union'+dropdownId).attr('style', 'display: list-item;  z-index: 900; margin-top: 54px; margin-left: 382px; position: absolute; z-index: 1000; float: left;min-width: 100px; list-style: none; border: 1px solid #ccc; border: 1px solid rgba(0, 0, 0, 0.2); *border-right-width: 2px; *border-bottom-width: 2px; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box;');
                                 $(".zila").each(function(){
                                     $(this).hide();
                                 });
@@ -130,7 +132,7 @@
 
     <div class="ngoSearch" id="primary" style="margin-left: 201px;">
         <ul class="nav">
-            <li class="dropdown selectLi" style="color: #000000 !important;">
+            <li class="dropdown selectLi" style="color: #000000 !important; z-index: 900;">
                 <a class="dropdown-toggle" href="javascript:void(0);" data-toggle="dropdown"><b>স্থানের নাম দিয়ে খুঁজুন</b><strong class="caret"></strong></a>
                 <div class="dropdown-menu" style="float: left; min-width: 100px !important; padding-bottom: 5px !important;">
                     <p style="text-align: left; margin-left: 5px;"><b>বিভাগ নির্বাচন</b></p>
@@ -146,7 +148,7 @@
                 </div>
             </li>
             <li class="dropdown zila" id="zila0" style="display: none;">
-                <div style="float: left; position: relative; min-width: 100px !important; padding-bottom: 5px !important;">
+                <div style="float: left; position: relative; min-width: 100px !important; padding-bottom: 5px !important; background-color: aliceblue;">
                     <p style="text-align: left; margin-left: 5px;"><b>জেলা নির্বাচন</b></p>
                     <ul id="dist">
 
@@ -154,7 +156,7 @@
                 </div>
             </li>
             <li class="dropdown upazila" id="upazila2" style="display: none;">
-                <div style="float: left; position: relative; min-width: 100px !important; padding-bottom: 5px !important;">
+                <div style="float: left; position: relative; min-width: 100px !important; padding-bottom: 5px !important; background-color: aliceblue;">
                     <p style="text-align: left; margin-left: 5px;"><b>উপজেলা নির্বাচন</b></p>
                     <ul id="upaz">
 
@@ -162,7 +164,7 @@
                 </div>
             </li>
             <li class="dropdown union" id="union0" style="display: none;">
-                <div style="float: left; position: relative; min-width: 100px !important; padding-bottom: 5px !important;">
+                <div style="float: left; position: relative; min-width: 100px !important; padding-bottom: 5px !important; background-color: aliceblue;">
                     <p style="text-align: left; margin-left: 5px;"><b>উপজেলা নির্বাচন</b></p>
                     <ul id="union">
 
@@ -173,7 +175,7 @@
 
     </div>
 
-    <div class="ngoSearch"><a id="advancedSearch" href="javascript:void(0);"><span id="defaultText">বিস্তারিতভাবে খুঁজুন</span><span id="advancedText" style="display: none;">ডিফল্টভাবে খুঁজুন</span> </a></div>
+    <div class="ngoSearch" style="margin-left: 800px;"><a id="advancedSearch" href="javascript:void(0);"><span id="defaultText">বিস্তারিতভাবে খুঁজুন</span><span id="advancedText" style="display: none;">ডিফল্টভাবে খুঁজুন</span> </a></div>
 
     <div class="ngoSearch" id="advanced" style="display: none;">
         <input type="text" name="searchKeyWords" id="searchKeyWords" placeholder="এনজিও নাম, স্থানের নাম অথবা কার্যক্রম লিখে খুঁজুন" size="250" style="width: 700px;"/>
